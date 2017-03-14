@@ -7,8 +7,6 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 
-import org.apache.http.conn.util.InetAddressUtils;
-
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.Socket;
@@ -125,35 +123,6 @@ public class MachineUtils {
     }
 
     /**
-     * 获取本机的ip
-     * @return
-     */
-    public static String getLocalHostIp(){
-        String ipaddress = "";
-        try{
-            Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces();
-            // 遍历所用的网络接口
-            while (en.hasMoreElements()){
-                NetworkInterface nif = en.nextElement();// 得到每一个网络接口绑定的所有ip
-                Enumeration<InetAddress> inet = nif.getInetAddresses();
-                // 遍历每一个接口绑定的所有ip
-                while (inet.hasMoreElements()){
-                    InetAddress ip = inet.nextElement();
-                    if (!ip.isLoopbackAddress()&& InetAddressUtils.isIPv4Address(ip.getHostAddress())){
-                        return ip.getHostAddress();
-                    }
-                    if (!ip.isLoopbackAddress()&& InetAddressUtils.isIPv6Address(ip.getHostAddress())){
-                        return ip.getHostAddress();
-                    }
-                }
-            }
-        }catch (SocketException e){
-            Log.e(TAG, "获取本地ip地址失败");
-        }
-        return ipaddress;
-    }
-
-    /**
      * 检查端口port是否被占用了
      * @param port
      * @return
@@ -213,8 +182,6 @@ public class MachineUtils {
         deviceInfos.put("IMEI",imei);
         String ims = getImsiInfo(mContext);
         deviceInfos.put("IMS",ims);
-        String IP = getLocalHostIp();
-        deviceInfos.put("IP",IP);
         String MAC = getRouteMac(mContext);
         deviceInfos.put("MAC",MAC);
         return deviceInfos;

@@ -3,7 +3,7 @@ package com.pixelall.mylibrary.okhttp;
 import android.util.Log;
 
 import com.google.gson.Gson;
-import com.pixel.photostudiob.bean.UpLoadFile;
+import com.pixelall.mylibrary.bean.UpLoadFile;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.builder.PostFormBuilder;
 import com.zhy.http.okhttp.builder.PostStringBuilder;

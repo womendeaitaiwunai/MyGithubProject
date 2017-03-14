@@ -1,6 +1,7 @@
 package com.pixelall.mylibrary.okhttp;
 
-import com.pixel.photostudiob.bean.UpLoadFile;
+
+import com.pixelall.mylibrary.bean.UpLoadFile;
 
 import java.util.HashMap;
 import java.util.List;

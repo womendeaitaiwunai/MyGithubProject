@@ -14,8 +14,8 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-import static com.pixel.photostudiob.util.MachineUtils.getTypeBRAND;
-import static com.pixel.photostudiob.util.MachineUtils.getTypeMODEL;
+import static com.pixelall.mylibrary.MachineUtils.getTypeBRAND;
+import static com.pixelall.mylibrary.MachineUtils.getTypeMODEL;
 
 
 public class PixelLogUtil {
